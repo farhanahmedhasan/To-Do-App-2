@@ -21,8 +21,16 @@ function addTodo(event) {
 	//Create li
 	const toDoText = document.createElement('li') //Created li 
 	toDoText.classList.add('todo-text') //Added a class
-	toDoText.innerText = todoInput.value
-	todoInput.value = ''
+
+	//Acts upon the field is emply or not
+	if (todoInput.value == "") {
+		alert('Insert a todo Please')
+		return false
+	}
+	else {
+		toDoText.innerText = todoInput.value
+		todoInput.value =''
+	}
 
 	toDoDiv.appendChild(toDoText) //Put li inside a div
 
@@ -32,7 +40,7 @@ function addTodo(event) {
 	completedButton.innerHTML = `<i class="fas fa-check"></i>` //Seted Icon
 	toDoDiv.appendChild(completedButton) //Put it inside Parent Div
 
-		//Delete Button
+	//Delete Button
 	const deleteButton = document.createElement('button') //Created Button
 	deleteButton.classList.add('delete') //Added Class
 	deleteButton.innerHTML = `<i class="fas fa-trash"></i>` //Seted Icon

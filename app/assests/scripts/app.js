@@ -24,14 +24,14 @@ function addTodo(event) {
 	const toDoText = document.createElement('li') //Created li 
 	toDoText.classList.add('todo-text') //Added a class
 
-	//Acts upon the field is emply or not
+	//Acts upon the field is emply or not	
 	if (todoInput.value == "") {
 		alert('Insert a todo Please')
 		return false
 	}
 	else {
 		toDoText.innerText = todoInput.value
-		todoInput.value =''
+		todoInput.value = ''
 	}
 
 	toDoDiv.appendChild(toDoText) //Put li inside a div
@@ -61,7 +61,7 @@ function deleteCheck(e) {
 		element.parentElement.classList.add('fall')
 		setTimeout(() => {
 			element.parentElement.remove()
-		},300)
+		}, 300)
 	}
 
 	//Completed Todo
